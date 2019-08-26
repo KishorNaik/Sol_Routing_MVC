@@ -1,0 +1,53 @@
+﻿@model Sol_Routing.Models.UserModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<h2>Route Demo</h2>
+
+@{ 
+
+    int id = 11;
+}
+
+<a class="btn btn-primary" asp-route="getvalue" asp-route-id="@id">Http Get - Route Value</a>
+
+<form asp-route="onsubmit">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="txtFirstName">First Name:</label>
+                    <input id="txtFirstName" class="form-control" asp-for="FirstName" />
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group">
+                    <label for="txtLastName">Last Name:</label>
+                    <input id="txtLastName" class="form-control" asp-for="LastName" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="form-group">
+                    <input id="btnSubmit" type="submit" class="btn btn-secondary" value="Submit" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    
+</form>
+
+<div>
+    <form asp-route="onsubmitroute" asp-route-id="@id">
+        <input id="btnSubmitRoute" type="submit" class="btn btn-secondary" value="Submit-Route" />
+    </form>
+
+</div>
